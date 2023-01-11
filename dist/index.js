@@ -8,6 +8,7 @@ const router_1 = require("./src/router/router");
 const body_parser_1 = __importDefault(require("body-parser"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const express_session_1 = __importDefault(require("express-session"));
 const app = (0, express_1.default)();
 mongoose_1.default.set('strictQuery', true);
 mongoose_1.default.connect('mongodb://127.0.0.1:27017/demo_c09').then(() => {
@@ -21,6 +22,12 @@ app.use((0, express_fileupload_1.default)({
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.static('./public'));
+app.use((0, express_session_1.default)({
+    resave: true,
+    saveUninitialized: true,
+    secret: 'Tùng',
+    cookie: { maxAge: 60000 }
+}));
 app.use('', router_1.router);
 app.listen(3001, () => {
     console.log('Server is running');

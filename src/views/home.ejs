@@ -112,7 +112,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/home" class="nav-item nav-link">Home</a>
-                        <a href="/products/create" class="nav-item nav-link">Create Product</a>
+                        <a href="/product/create" class="nav-item nav-link">Create Product</a>
                         <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -122,9 +122,11 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="/user/login" class="nav-item nav-link">Logout</a>
+
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Login</a>
+                        <a href="/user/login" class="nav-item nav-link">Login</a>
                         <a href="" class="nav-item nav-link">Register</a>
                     </div>
                 </div>
@@ -212,6 +214,13 @@
                     <img class="img-fluid" src="<%= item.image%>" alt="">
                 </a>
                 <h5 class="font-weight-semi-bold m-0"><%= item.price %> $</h5>
+                <br>
+                <h5 class="font-weight-semi-bold m-0">Loại: <%= item.category.name %></h5>
+                <br>
+
+                <a href="/product/edit/<%= item._id %>" class="btn btn-success">Edit</a>
+                <br>
+                <a href="/product/delete/<%= item._id %>" class="btn btn-danger">Delete</a>
             </div>
         </div>
         <% }) %>
