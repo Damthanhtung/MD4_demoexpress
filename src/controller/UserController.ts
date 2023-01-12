@@ -23,6 +23,20 @@ class HomeController {
         }
 
     }
+    showFormRegister =  async (req: Request, res: Response) => {
+        await this.userService.getAll();
+        res.render('user/register')
+    }
+    register = async (req: Request, res: Response) => {
+        let user = await this.userService.checkUser(req.body)
+        if (user) {
+            // @ts-ignore
+            req.session.User = user
+            res.redirect(301,'/home')
+        } else {
+            res.redirect(301,'/user/login')
+        }
+    }
 
 }
 

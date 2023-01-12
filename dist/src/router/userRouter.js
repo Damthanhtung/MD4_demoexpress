@@ -9,4 +9,6 @@ const UserController_1 = __importDefault(require("../controller/UserController")
 exports.userRouter = (0, express_1.Router)();
 exports.userRouter.get('/login', UserController_1.default.showFormLogin);
 exports.userRouter.post('/login', UserController_1.default.login);
+exports.userRouter.get('/register', UserController_1.default.showFormRegister);
+exports.userRouter.post('/register', UserController_1.default.register);
 //# sourceMappingURL=userRouter.js.map

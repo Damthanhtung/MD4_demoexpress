@@ -6,5 +6,5 @@ import {userRouter} from "./userRouter";
 export const router = Router();
 router.get('/home', homeController.showHome)
 router.use('/product',productRouter)
-router.use('/user',userRouter)
+router.use('/admin',userRouter)
 

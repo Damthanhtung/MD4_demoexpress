@@ -11,5 +11,5 @@ const userRouter_1 = require("./userRouter");
 exports.router = (0, express_1.Router)();
 exports.router.get('/home', HomeController_1.default.showHome);
 exports.router.use('/product', productRouter_1.productRouter);
-exports.router.use('/user', userRouter_1.userRouter);
+exports.router.use('/admin', userRouter_1.userRouter);
 //# sourceMappingURL=router.js.map
